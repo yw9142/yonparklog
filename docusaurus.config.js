@@ -17,7 +17,7 @@ const config = {
   projectName: 'yonparklog', // Usually your repo name.
 
   plugins: [
-    ...[
+    [
       '@docusaurus/plugin-pwa',
       {
         debug: true,
