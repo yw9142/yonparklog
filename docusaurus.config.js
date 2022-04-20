@@ -74,6 +74,23 @@ const config = {
     ],
   ],
 
+  i18n: {
+    defaultLocale: 'ko',
+    locales: ['ko', 'en'],
+    localeConfigs: {
+      ko: {
+        label: 'Korean',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+    },
+  },
+
   presets: [
     [
       'classic',
