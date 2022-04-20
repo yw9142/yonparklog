@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Yonparklog',
   tagline: '무언가 정리하는 공간',
-  url: 'https://yonpark.io',
+  url: 'https://gleeful-choux-3371da.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
