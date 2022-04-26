@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Yonparklog',
-  tagline: '무언가 정리하는 공간',
+  tagline: 'Frontend development, Project management, Design, etc..',
   url: 'https://gleeful-choux-3371da.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -141,39 +141,39 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: '정리',
-                to: '/docs/intro',
-              },
-            ],
-          },
           // {
-          //   title: 'Community',
+          //   title: 'Docs',
           //   items: [
           //     {
-          //       label: 'Stack Overflow',
-          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-          //     },
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'Twitter',
-          //       href: 'https://twitter.com/docusaurus',
+          //       label: 'docs',
+          //       to: '/docs/intro',
           //     },
           //   ],
           // },
           {
+            title: 'Community',
+            items: [
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/users/12744924/yonpark',
+              },
+              {
+                label: 'facebook',
+                href: 'https://www.facebook.com/YonghunPark0828/',
+              },
+              {
+                label: 'linkedin',
+                href: 'https://www.linkedin.com/in/yonghun-park/',
+              },
+            ],
+          },
+          {
             title: 'More',
             items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/yw9142',
