@@ -1,47 +1,23 @@
 ---
 sidebar_position: 1
+slug: /
+id: intro
 ---
 
-# Tutorial Intro
+# 무슨 내용의 글을 쓰나요?
 
-Let's discover **Docusaurus in less than 5 minutes**.
+그냥 그때 그때 **떠오르는 것**을 풀어내고 있습니다.
 
-## Getting Started
+## Docs
 
-Get started by **creating a new site**.
+Docs에는 보통 **분류가 가능한 내용**들을 작성하고 있습니다.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+주로 프로그래밍을 하면서 정리하고 싶은 것들
+또는 여행과 위스키에 관한 내용도 가끔 작성합니다.
 
-### What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Blog
 
-## Generate a new site
+Blog에는 그냥 갑자기 생각나는 것들? 하지만 분류하기에는 애매한 그런 생각들을 적어보고 있습니다.
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+무슨 내용을 쓸지는 예상할 수 없는거죠ㅎㅎ..

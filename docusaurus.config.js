@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Yonparklog',
   tagline: 'Frontend development, Project management, Design, etc..',
-  url: 'https://gleeful-choux-3371da.netlify.app/',
+  url: 'https://yonparklog-njolm.run.goorm.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -98,10 +98,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+		  routeBasePath: '/',
           // Please change this to your repo.
           editUrl: 'https://github.com/yw9142/yonparklog/tree/master/',
         },
         blog: {
+		  blogSidebarTitle: '모든 게시물',
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
@@ -116,12 +118,18 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    (
+		{
+	hideableSidebar: true,
+	autoCollapseSidebarCategories: true,
+			// autoCollapseCategories: true,
+			// 사이드바 카테고리 자동 접기는 아마 버전문제인듯함. beta18과 최신버전이랑 다름
       navbar: {
         title: 'Yonparklog',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
+		  // href: '/docs/intro',
         },
         items: [
           {
