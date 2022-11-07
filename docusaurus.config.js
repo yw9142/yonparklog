@@ -98,7 +98,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-		  routeBasePath: '/',
+		  // routeBasePath: '/',
           // Please change this to your repo.
           editUrl: 'https://github.com/yw9142/yonparklog/tree/master/',
         },
@@ -120,8 +120,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     (
 		{
-	hideableSidebar: true,
-	autoCollapseSidebarCategories: true,
+	// hideableSidebar: true,
+	// autoCollapseSidebarCategories: true,
+	  docs: {
+        sidebar: {
+		  hideable: true,
+          autoCollapseCategories: true,
+      		},
+    	},
 			// autoCollapseCategories: true,
 			// 사이드바 카테고리 자동 접기는 아마 버전문제인듯함. beta18과 최신버전이랑 다름
       navbar: {
