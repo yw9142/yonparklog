@@ -16,7 +16,12 @@ const config = {
   organizationName: 'yonpark', // Usually your GitHub org/user name.
   projectName: 'yonparklog', // Usually your repo name.
 
-  plugins: [
+	
+	onBrokenLinks: 'ignore',
+	onBrokenMarkdownLinks: 'ignore',
+	onDuplicateRoutes: 'ignore',
+
+	plugins: [
     [
       '@docusaurus/plugin-pwa',
       {
@@ -120,9 +125,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     (
 		{
-			onBrokenLinks: 'ignore',
-			onBrokenMarkdownLinks: 'ignore',
-			onDuplicateRoutes: 'ignore',
 	// hideableSidebar: true,
 	// autoCollapseSidebarCategories: true,
 	  docs: {
