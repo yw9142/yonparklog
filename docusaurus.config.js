@@ -122,6 +122,7 @@ const config = {
 		{
 			onBrokenLinks: 'ignore',
 			onBrokenMarkdownLinks: 'ignore',
+			onDuplicateRoutes: 'ignore',
 	// hideableSidebar: true,
 	// autoCollapseSidebarCategories: true,
 	  docs: {
