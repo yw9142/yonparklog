@@ -98,7 +98,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-		  // routeBasePath: '/',
+		  routeBasePath: '/',
           // Please change this to your repo.
           editUrl: 'https://github.com/yw9142/yonparklog/tree/master/',
         },
