@@ -120,6 +120,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     (
 		{
+			onBrokenLinks: 'ignore',
+			onBrokenMarkdownLinks: 'ignore',
 	// hideableSidebar: true,
 	// autoCollapseSidebarCategories: true,
 	  docs: {
