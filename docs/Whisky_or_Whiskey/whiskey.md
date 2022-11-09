@@ -9,6 +9,6 @@ last_update:
   author: custom author name
 ---
 
-# Translate your site
+# Whiskey or Whisky
 
-Let's translate `docs/intro.md` to French.
+뭐가 다를까요?
