@@ -1,0 +1,107 @@
+---
+title: 'Reverse String'
+id: 'Reverse-String'
+sidebar_label: 'Reverse String'
+sidebar_position: 2
+tags: [Algorithm, String Manipulation]
+
+description: 문자열 뒤집기
+
+keywords:
+  - Algorithm
+  - Python
+  - Problem Solving
+  - String Manipulation
+
+last_update:
+  date: 03/12/2022
+  author: custom author name
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+:::note
+본 블로그의 포스팅 내용은 파이썬 알고리즘 인터뷰의 내용을 기반으로 작성 되었습니다.
+:::
+
+# 문자열 뒤집기
+
+Leetcode : https://leetcode.com/problems/reverse-string/
+
+## 풀이1 투 포인터를 이용한 스왑
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py title="reverseString.py" showLineNumbers
+def reverseString(self, s: List[str]) -> None:
+	left, right = 0, len(s) - 1
+	while left < right:
+		s[left], s[right] = s[right], s[left]
+		left += 1
+		right -= 1
+```
+
+</TabItem>
+
+<TabItem value="js" label="JavaScript">
+
+```js title="reverse_string.js" showLineNumbers
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+var reverseString = function(s) {
+  let left = 0, right = s.length - 1;
+
+  while (left < right) {
+    const temp = s[left];
+    s[left] = s[right];
+    s[right] = temp;
+
+    left++;
+    right--;
+  }
+};
+```
+
+</TabItem>
+</Tabs>
+
+## 풀이2 파이써닉
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py title="reverseString.py" showLineNumbers
+def reverseString(self, s: List[str]) -> None:
+	s.reverse()
+```
+
+</TabItem>
+
+<TabItem value="js" label="JavaScript">
+
+```js title="reverse_string.js" showLineNumbers
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+var reverseString = function(s) {
+    return s.reverse();
+};
+```
+
+</TabItem>
+</Tabs>
+
+ 반전시켜서 이어붙인 후 원본이랑 비교해서 해결하였다.<br/>
+ 내 풀이는 2번 풀이였다.
+
+## 성능
+
+| 풀이 | 방식 | 실행 시간 |
+|:----------|:----------:|:----------:|
+| 1 | 투 포인터를 이용한 스왑 | 216ms |
+| 2 | 파이써닉 | 208ms |
