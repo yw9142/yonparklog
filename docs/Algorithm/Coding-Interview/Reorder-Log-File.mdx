@@ -1,0 +1,116 @@
+---
+title: 'Reorder Log File'
+id: 'Reorder-Log-File'
+sidebar_label: 'Reorder Log File'
+sidebar_position: 3
+tags: [Algorithm, String Manipulation]
+
+description: 로그 파일 재정렬
+
+keywords:
+  - Algorithm
+  - Python
+  - Problem Solving
+  - String Manipulation
+
+last_update:
+  date: 04/12/2022
+  author: custom author name
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+:::note
+본 블로그의 포스팅 내용은 파이썬 알고리즘 인터뷰의 내용을 기반으로 작성 되었습니다.
+:::
+
+# 로그 파일 재정렬
+
+Leetcode : https://leetcode.com/problems/reorder-data-in-log-files/
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+## 풀이1 lambda와 + 연산자를 이용
+
+```py title="reorderLogFiles.py" showLineNumbers
+def reorderLogFiles(self, logs: List[str]) -> List[str]:
+	letters, digits = [], []
+
+	for log in logs:
+	  if log.split()[1].isdigit():
+		digits.append(log)
+	  else:
+		letters.append(log)
+		
+	# 2개의 키를 람다 표현식으로 정렬
+	letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))  # 1순위 식별자 x.split()[1:] / 2순위 식별자 x.split()[0]
+	# digits.sort(key=lambda x: (x.split()[1:], x.split()[0])) # 숫자 로그는 입력 순서대로이기 때문에 주석처리
+	
+	return letters + digits
+```
+
+lambda 함수를 사용해서 sort key값에 1순위, 2순위 정렬조건을 주어서 첫번째는 문자 기준, 두번째는 식별자 기준으로 정렬되게 하였다.
+
+</TabItem>
+
+<TabItem value="js" label="JavaScript">
+
+## 풀이1 localeCompare과 spread 연산자 이용
+
+```js title="reorder_log_files.js" showLineNumbers
+/**
+ * @param {string[]} logs
+ * @return {string[]}
+ */
+
+const getContent = (log) => {
+    const content = log.slice(log.indexOf(" ") + 1);
+    return content;
+}
+
+let isAlpha = /[a-zA-Z]/;
+let isNumeric = /[0-9]/;
+
+var reorderLogFiles = function(logs) {
+    // 문자 로그
+    const letters = logs.filter(log => isAlpha.test(log.split(' ')[1]));
+	
+	// 숫자 로그
+    const digits = logs.filter(log => isNumeric.test(log.split(" ")[1]));
+	
+    // 알파벳 순서, 식별자 순서로 정렬
+    letters.sort(
+      (a, b) => {
+        const compareStatement = getContent(a).localeCompare(getContent(b));
+
+        // compareStatement가 0일 경우 같다는 소리이므로 식별자 기준으로 정렬
+        if(compareStatement === 0) {
+          return a.localeCompare(b);
+        }
+        // 알파벳 순서대로 정렬
+        return compareStatement;
+      }
+    );
+    
+    // Spread 연산자로 letters, digits, 배열 병합
+	return [...letters, ...digits];
+};
+```
+
+logs에서 letters의 식별자 뒤쪽만 따로 뽑아내서 그걸 localeCompare를 통해 같으면<br/>
+식별자 기준으로 정렬하고 아니면 알파벳 순으로 정렬하도록 했으며<br/>
+정렬된 letters와 digits를 spread 문법을 통해서 하나로 병합해서 return 해주었다.<br/>
+`localeCompare`를 이 문제를 풀면서 처음 알게 되었다. 아마 알고리즘 하면서 자주 사용할 것 같다.<br/>
+
+</TabItem>
+</Tabs>
+
+
+
+## 성능
+
+| 풀이 | 방식 | 실행 시간 |
+|:----------|:----------:|:----------:|
+| 1 | 람다와 + 연산자 사용 | 48ms |
