@@ -1,0 +1,96 @@
+---
+title: 'Group Anagrams'
+id: 'Group-Anagrams'
+sidebar_label: 'Group Anagrams'
+sidebar_position: 5
+tags: [Algorithm, String Manipulation]
+draft: true
+
+description: 그룹 애너그램
+
+keywords:
+  - Algorithm
+  - Python
+  - Problem Solving
+  - String Manipulation
+
+last_update:
+  date: 07/12/2022
+  author: custom author name
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+:::note
+본 블로그의 포스팅 내용은 파이썬 알고리즘 인터뷰의 내용을 기반으로 작성 되었습니다.
+:::
+
+# 그룹 애너그램
+
+Leetcode : https://leetcode.com/problems/group-anagrams/
+
+## 풀이1 정렬하여 딕셔너리에 추가
+
+```py title="group_anagrams.py" showLineNumbers
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+	anagrams = collections.defaultdict(list)
+	
+	for word in strs:
+		anagrams[''.join(sorted(word))].append(word)
+		
+	return list(anagrams.values())
+```
+
+## 내 풀이
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py title="group_anagrams.py" showLineNumbers
+
+```
+
+</TabItem>
+
+<TabItem value="js" label="JavaScript">
+
+```js title="groupAnagrams.js" showLineNumbers
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    const setStrs = new Map();
+
+    for(let i = 0; i < strs.length; i++) {
+        let storage = strs[i].split('').sort().join('');
+
+        if(setStrs.has(storage)) {
+            setStrs.set(storage,[...setStrs.get(storage), strs[i]]); // 문자열 합치는 ... operator
+        } else {
+          setStrs.set(storage,[strs[i]]); // 세팅해주기
+        }
+    }
+
+    let anagrams = [];
+    setStrs.forEach((a, b) => {
+      anagrams.push(a);
+    })
+
+    return anagrams;
+};
+```
+
+</TabItem>
+</Tabs>
+
+
+
+<!--
+## 성능
+
+| 풀이 | 방식 | 실행 시간 |
+|:----------|:----------:|:----------:|
+| 1 | 리스트 컴프리헨션, Counter 객체 사용 | 42ms |
+-->
