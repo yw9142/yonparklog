@@ -34,8 +34,8 @@ Leetcode : https://leetcode.com/problems/reverse-string/
 <Tabs>
 <TabItem value="py" label="Python">
 
-```py title="reverseString.py" showLineNumbers
-def reverseString(self, s: List[str]) -> None:
+```py title="reverse_string.py" showLineNumbers
+def reverse_string(self, s: List[str]) -> None:
 	left, right = 0, len(s) - 1
 	while left < right:
 		s[left], s[right] = s[right], s[left]
@@ -47,7 +47,7 @@ def reverseString(self, s: List[str]) -> None:
 
 <TabItem value="js" label="JavaScript">
 
-```js title="reverse_string.js" showLineNumbers
+```js title="reverseString.js" showLineNumbers
 /**
  * @param {character[]} s
  * @return {void} Do not return anything, modify s in-place instead.
@@ -74,8 +74,8 @@ var reverseString = function(s) {
 <Tabs>
 <TabItem value="py" label="Python">
 
-```py title="reverseString.py" showLineNumbers
-def reverseString(self, s: List[str]) -> None:
+```py title="reverse_string.py" showLineNumbers
+def reverse_string(self, s: List[str]) -> None:
 	s.reverse()
 ```
 
@@ -83,7 +83,7 @@ def reverseString(self, s: List[str]) -> None:
 
 <TabItem value="js" label="JavaScript">
 
-```js title="reverse_string.js" showLineNumbers
+```js title="reverseString.js" showLineNumbers
 /**
  * @param {character[]} s
  * @return {void} Do not return anything, modify s in-place instead.

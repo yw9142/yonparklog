@@ -34,8 +34,8 @@ Leetcode : https://leetcode.com/problems/reorder-data-in-log-files/
 
 ## 풀이1 lambda와 + 연산자를 이용
 
-```py title="reorderLogFiles.py" showLineNumbers
-def reorderLogFiles(self, logs: List[str]) -> List[str]:
+```py title="reorder_log_files.py" showLineNumbers
+def reorder_log_files(self, logs: List[str]) -> List[str]:
 	letters, digits = [], []
 
 	for log in logs:
@@ -59,7 +59,7 @@ lambda 함수를 사용해서 sort key값에 1순위, 2순위 정렬조건을 �
 
 ## 풀이1 localeCompare과 spread 연산자 이용
 
-```js title="reorder_log_files.js" showLineNumbers
+```js title="reorderLogFiles.js" showLineNumbers
 /**
  * @param {string[]} logs
  * @return {string[]}
@@ -108,9 +108,10 @@ logs에서 letters의 식별자 뒤쪽만 따로 뽑아내서 그걸 localeCompa
 </Tabs>
 
 
-
+<!--
 ## 성능
 
 | 풀이 | 방식 | 실행 시간 |
 |:----------|:----------:|:----------:|
 | 1 | 람다와 + 연산자 사용 | 48ms |
+-->
