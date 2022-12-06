@@ -173,8 +173,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/users/12744924/yonpark',
+                label: 'instagram',
+                href: 'https://instagram.com/yyyonpark',
               },
               {
                 label: 'facebook',
@@ -190,8 +190,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'LeetCode',
+                to: 'https://leetcode.com/yonpark',
               },
               {
                 label: 'GitHub',
