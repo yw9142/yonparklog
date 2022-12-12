@@ -15,7 +15,7 @@ keywords:
   - String Manipulation
 
 last_update:
-  date: 07/12/2022
+  date: 12/12/2022
   author: custom author name
 ---
 
@@ -32,6 +32,9 @@ Leetcode : https://leetcode.com/problems/group-anagrams/
 
 ## 풀이1 정렬하여 딕셔너리에 추가
 
+<Tabs>
+<TabItem value="py" label="Python">
+
 ```py title="group_anagrams.py" showLineNumbers
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 	anagrams = collections.defaultdict(list)
@@ -40,15 +43,6 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 		anagrams[''.join(sorted(word))].append(word)
 		
 	return list(anagrams.values())
-```
-
-## 내 풀이
-
-<Tabs>
-<TabItem value="py" label="Python">
-
-```py title="group_anagrams.py" showLineNumbers
-
 ```
 
 </TabItem>
@@ -64,18 +58,20 @@ var groupAnagrams = function(strs) {
     const setStrs = new Map();
 
     for(let i = 0; i < strs.length; i++) {
-        let storage = strs[i].split('').sort().join('');
+        let storage = strs[i].split('').sort().join(''); // 알파벳으로 분리해서 정렬 후 다시 이어붙여서 배열에 저장
+		// 분리 후 정렬을 통해 애너그램을 찾아내는 것.
 
-        if(setStrs.has(storage)) {
-            setStrs.set(storage,[...setStrs.get(storage), strs[i]]); // 문자열 합치는 ... operator
+        if(setStrs.has(storage)) { // 알파벳단위로 정렬된 단어가 key값으로 존재하는지 판별
+            setStrs.set(storage,[...setStrs.get(storage), strs[i]]); // 존재 한다면 해당 애너그램을 key로 value에 기존 map에 존재하던 values + 이번 애너그램(원본) 추가
         } else {
-          setStrs.set(storage,[strs[i]]); // 세팅해주기
+          setStrs.set(storage,[strs[i]]); // 존재하지 않는다면 해당 애너그램을, value로 이번 애너그램 값 추가(원본)
         }
     }
 
     let anagrams = [];
-    setStrs.forEach((a, b) => {
-      anagrams.push(a);
+	// setStrs의 Value를 순회하면서 삽입
+    setStrs.forEach((currentElement) => {
+      anagrams.push(currentElement);
     })
 
     return anagrams;
@@ -85,7 +81,9 @@ var groupAnagrams = function(strs) {
 </TabItem>
 </Tabs>
 
-
+파이썬은 dict가 매우 강력해서 바로 sorting 해서 해결했고<br/>
+자바스크립트는 알파벳단위로 쪼개서 sorting 해서 해결 했다.<br/>
+Map을 사용했는데 object보다 훨씬 강력한 것 같아서 자주 사용할 듯 하다.
 
 <!--
 ## 성능
