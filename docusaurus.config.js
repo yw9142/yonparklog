@@ -120,11 +120,24 @@ const config = {
       }),
     ],
   ],
+	
+	scripts: [
+    // Object format.
+    {
+      src: 'https://app.embed.im/snow.js',
+      defer: true,
+    },
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     (
 		{
+	colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
 	// hideableSidebar: true,
 	// autoCollapseSidebarCategories: true,
 	  docs: {
