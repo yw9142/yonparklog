@@ -26,17 +26,38 @@ import TabItem from '@theme/TabItem';
 본 블로그의 포스팅 내용은 파이썬 알고리즘 인터뷰의 내용을 기반으로 작성 되었습니다.
 :::
 
-# 그룹 애너그램
+# 가장 긴 팰린드롬 부분 문자열
 
 Leetcode : https://leetcode.com/problems/longest-palindromic-substring/
 
-## 풀이1 중앙을 중심으로 확장하는 풀이
+## 풀이 중앙을 중심으로 확장하는 풀이
 
 <Tabs>
 <TabItem value="py" label="Python">
 
 ```py title="longest_palindromic_substring.py" showLineNumbers
+def longestPalindrome(self, s: str) -> str:
+	# 팰린드롬 판별 및 투 포인터 확장
+    def expand(left: int, right:int) -> str:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left + 1:right]
 
+	# 해당 사항이 없을 때 빠르게 리턴 (너무 짧거나, 문장 전체가 팰린드롬일 때)
+    if len(s) < 2 or s == s[::-1]:
+        return s
+
+    result = ''
+
+	# 슬라이딩 윈도우 우측으로 이동
+    for i in range(len(s) - 1):
+        result = max(result,
+                expand(i, i + 1),
+                expand(i, i + 2),
+                key=len) # 문자열 길이를 기준으로 설정
+
+    return result
 ```
 
 </TabItem>
@@ -44,13 +65,41 @@ Leetcode : https://leetcode.com/problems/longest-palindromic-substring/
 <TabItem value="js" label="JavaScript">
 
 ```js title="longestPalindromicSubstring.js" showLineNumbers
+/**
+ * @param {string} s
+ * @return {string}
+ */
+let expand = function(s, left, right) {
+    while(left >= 0 && right < s.length && s[left] === s[right]) {
+        left--;
+        right++;
+    }
+    return s.slice(left + 1, right);
+}
+
+var longestPalindrome = function(s) {
+    if(s.length < 2 || s.split('').reverse().join('') === s) return s;
+
+    let result = '';
+
+    for(let i = 0; i < s.length-1; i++) {
+        let expand1 = expand(s, i, i+1);
+        let expand2 = expand(s, i, i+2);
+        if (result.length < expand1.length || result.length < expand2.length) {
+          result = expand1.length > expand2.length ? expand1 : expand2;
+        }
+    }
+    return result;
+};
+
 
 ```
 
 </TabItem>
 </Tabs>
 
-
+기본 구조를 보면 알겠지만 파이썬이랑 풀이가 거의 똑같다.<br/>
+비슷한 구조를 자바스크립트에서도 구현할 수 있어 그대로 구현했다.
 
 <!--
 ## 성능
