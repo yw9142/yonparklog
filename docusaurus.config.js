@@ -10,8 +10,8 @@ const config = {
   tagline: 'Frontend development, Project management, Design, etc..',
   url: 'https://gleeful-choux-3371da.netlify.app',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // onBrokenLinks: 'throw',
+  // onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'yonpark', // Usually your GitHub org/user name.
   projectName: 'yonparklog', // Usually your repo name.
@@ -121,22 +121,22 @@ const config = {
     ],
   ],
 	
-	scripts: [
-    // Object format.
-    {
-      src: 'https://app.embed.im/snow.js',
-      defer: true,
-    },
-  ],
+	// scripts: [
+  //   // Object format.
+  //   {
+  //     src: 'https://app.embed.im/snow.js',
+  //     defer: true,
+  //   },
+  // ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     (
 		{
 	colorMode: {
-      defaultMode: 'dark',
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
+      defaultMode: 'light',
+      // disableSwitch: true,
+      // respectPrefersColorScheme: false,
     },
 	// hideableSidebar: true,
 	// autoCollapseSidebarCategories: true,
