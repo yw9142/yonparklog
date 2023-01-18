@@ -1,5 +1,0 @@
-1. guacamole rdp
-2. codeserver
-3. vaultwarden
-4. firewall policy
-5. scheduler(wol, booting)
